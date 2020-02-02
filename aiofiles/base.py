@@ -3,6 +3,12 @@ import asyncio
 from collections.abc import Coroutine
 
 
+import warnings
+
+
+ warnings.filterwarnings("ignore", category=DeprecationWarning,
+                         message="\"@coroutine\" decorator is deprecated")
+
 class AsyncBase:
     def __init__(self, file, loop, executor):
         self._file = file
